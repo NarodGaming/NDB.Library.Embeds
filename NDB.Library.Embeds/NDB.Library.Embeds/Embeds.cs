@@ -12,7 +12,7 @@ namespace NDB.Library.Embeds
             if (startTitle != null) { builder.Title = NDB_Main._config["botname"]; } else { title = "NDB"; }
             if (title != "") { builder.Title += " | " + title; }
             if (picture != "") { builder.ImageUrl= picture; }
-            builder.Color = new Color(0x607D8B);
+            builder.Color = new Color(Convert.ToUInt32(NDB_Main._config["embedcolour"], 16));
             builder.Description = content;
             return builder.Build();
         }
