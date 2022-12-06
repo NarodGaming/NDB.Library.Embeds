@@ -1,4 +1,5 @@
 ﻿using Discord;
+using Discord.Rest;
 using Discord.WebSocket;
 
 namespace NDB.Library.Embeds
@@ -18,7 +19,7 @@ namespace NDB.Library.Embeds
             return builder.Build();
         }
 
-        public static Task ReplyEmbedAsync(ISocketMessageChannel responseChannel, String content, String title = "", String picture = "")
+        public static Task<RestUserMessage> ReplyEmbedAsync(ISocketMessageChannel responseChannel, String content, String title = "", String picture = "")
         {
             return responseChannel.SendMessageAsync("", false, EmbedBuilder(content, title, picture));
         }
