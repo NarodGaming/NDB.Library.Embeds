@@ -23,7 +23,7 @@ namespace NDB.Library.Embeds
 
         public static Task<RestUserMessage> ReplyEmbedAsync(ISocketMessageChannel responseChannel, String content, String title = "", String picture = "", String footer = "", String thumbnail = "")
         {
-            return responseChannel.SendMessageAsync("", false, EmbedBuilder(content, title, picture));
+            return responseChannel.SendMessageAsync("", false, EmbedBuilder(content, title, picture, footer, thumbnail));
         }
     }
 }
