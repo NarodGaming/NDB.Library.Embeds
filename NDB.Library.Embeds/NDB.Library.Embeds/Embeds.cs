@@ -25,5 +25,10 @@ namespace NDB.Library.Embeds
         {
             return responseChannel.SendMessageAsync("", false, EmbedBuilder(content, title, picture, footer, thumbnail));
         }
+
+        public static Task<RestUserMessage> ReplyEmbedAsync(ISocketMessageChannel responseChannel, String content, ComponentBuilder component, String title = "", String picture = "", String footer = "", String thumbnail = "")
+        {
+            return responseChannel.SendMessageAsync("", false, EmbedBuilder(content, title, picture, footer, thumbnail), components: component.Build());
+        }
     }
 }
