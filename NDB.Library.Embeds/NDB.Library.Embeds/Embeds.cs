@@ -23,12 +23,12 @@ namespace NDB.Library.Embeds
 
         public static Task<RestUserMessage> ReplyEmbedAsync(ISocketMessageChannel responseChannel, String content, String title = "", String picture = "", String footer = "", String thumbnail = "")
         {
-            return responseChannel.SendMessageAsync("", false, EmbedBuilder(content, title, picture, footer, thumbnail));
+            return responseChannel.SendMessageAsync(embed:EmbedBuilder(content, title, picture, footer, thumbnail));
         }
 
         public static Task<RestUserMessage> ReplyEmbedAsync(ISocketMessageChannel responseChannel, String content, ComponentBuilder component, String title = "", String picture = "", String footer = "", String thumbnail = "")
         {
-            return responseChannel.SendMessageAsync("", false, EmbedBuilder(content, title, picture, footer, thumbnail), components: component.Build());
+            return responseChannel.SendMessageAsync(embed:EmbedBuilder(content, title, picture, footer, thumbnail), components: component.Build());
         }
     }
 }
